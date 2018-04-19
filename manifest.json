@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+  "name": "Infinite lean scroll",
+  "version": "1.0",
+
+  "description": "Removes DOM nodes that cross outside the viewport during an infinite scroll to save RAM",
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["leandom.js"]
+    }
+  ]
+
+}
