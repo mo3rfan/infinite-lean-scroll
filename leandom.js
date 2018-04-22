@@ -9,9 +9,9 @@ var intersection_cb = function(entries, observer) {
   });
 }
 
-var intersection_observer = new IntersectionObserver(window.requestIdleCallback((entries, obs) => { 
-  intersection_cb(entries, obs);
-}), { rootMargin: "150%" });
+var intersection_observer = new IntersectionObserver((entries, obs) => {
+  window.requestIdleCallback(() => { intersection_cb(entries, obs) });
+}, { rootMargin: "150%" });
 
 // Add intersection observer to existing elements on page
 for (let node of targetNode.children) {
